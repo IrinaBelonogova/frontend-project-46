@@ -4,6 +4,7 @@ import { program } from 'commander';
 import path from 'path';
 
 import { parseFile } from './src/parse.js';
+import { genDiff } from './src/diffGenerator.js';
 
 program
   .version('0.0.1')
@@ -17,7 +18,13 @@ program
     const data1 = parseFile(absolutePath1);
     const data2 = parseFile(absolutePath2);
 
-    console.log(`Comparing ${data1} and ${data2} in ${program.format} format`);
+    if (data1 !== null && data2 !== null) {
+      const difference = genDiff(data1, data2);
+      console.log(`Comparing ${absolutePath1} and ${absolutePath2} in ${program.format} format`);
+      console.log(difference);
+    } else {
+      console.error('Error reading one or both files.');
+    }
   });
 
 program.parse();

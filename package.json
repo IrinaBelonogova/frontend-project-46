@@ -10,7 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "ci": "^2.3.0",
-    "commander": "^12.1.0"
+    "commander": "^12.1.0",
+    "lodash": "^4.17.21"
   },
   "type": "module"
 }
