@@ -2,7 +2,7 @@ install:
     npm ci
 
 gendiff:
-    node bin/gendiff.js
+    node gendiff.js
 
 fix:
     npx prettier --write .

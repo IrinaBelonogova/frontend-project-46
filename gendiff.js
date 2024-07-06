@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-import parseFile from '../src/parse.js';
+import { program } from 'commander';
+import path from 'path';
 
-const { program } = require('commander');
-const path = require('path');
-const { parseFile } = require('./parser');
+import { parseFile } from './src/parse.js';
 
 program
   .version('0.0.1')
@@ -18,9 +17,7 @@ program
     const data1 = parseFile(absolutePath1);
     const data2 = parseFile(absolutePath2);
 
-    if (data1 !== null && data2 !== null) {
-      console.log(`Comparing ${absolutePath1} and ${absolutePath2} in ${program.format} format`);
-    }
+    console.log(`Comparing ${data1} and ${data2} in ${program.format} format`);
   });
 
-program.parse(process.argv);
+program.parse();
