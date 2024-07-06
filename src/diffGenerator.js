@@ -22,4 +22,4 @@ function genDiff(filepath1, filepath2) {
   return `${diff}}`;
 }
 
-module.exports = { genDiff };
+export { genDiff };

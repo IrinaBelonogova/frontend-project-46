@@ -2,7 +2,7 @@
   "name": "frontend-project-46",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/IrinaBelonogova/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/IrinaBelonogova/frontend-project-46/actions)",
-  "main": "parser.js",
+  "main": "parse.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,5 +11,8 @@
   "dependencies": {
     "ci": "^2.3.0",
     "commander": "^12.1.0"
+  },
+  "bin": {
+    "gendiff": "bin/gendiff/js"
   }
 }

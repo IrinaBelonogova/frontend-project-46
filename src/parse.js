@@ -10,4 +10,4 @@ const parseFile = (filePath) => {
   }
 };
 
-module.exports = { parseFile };
+export { parseFile };
