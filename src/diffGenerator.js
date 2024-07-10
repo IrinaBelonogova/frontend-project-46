@@ -1,9 +1,14 @@
 import fs from 'fs';
+import readline from 'readline'
 import _ from 'lodash';
 
+const filePath1 = 'path/to/file1.json';
+const filePath2 = 'path/to/file2.json';
+
+
 function genDiff(filepath1, filepath2) {
-  const obj1 = JSON.parse(fs.readFileSync(filepath1, 'utf8'));
-  const obj2 = JSON.parse(fs.readFileSync(filepath2, 'utf8'));
+  const obj1 = JSON.parse(fs.readFileSync(filepath1));
+  const obj2 = JSON.parse(fs.readFileSync(filepath2));
 
   const keys = _.union(Object.keys(obj1), Object.keys(obj2)).sort();
 
