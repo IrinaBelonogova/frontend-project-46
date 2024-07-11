@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-import fs from 'fs';
 import { program } from 'commander';
-import path from 'path';
+import path from 'filepath1.json,filepath2.json';
 
 import { parseFile } from './src/parse.js';
 import { genDiff } from './src/diffGenerator.js';
