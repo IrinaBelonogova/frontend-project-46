@@ -1,30 +1,14 @@
 #!/usr/bin/env node
 
-import { program } from 'commander';
-import path from 'filepath1.json,filepath2.json';
+import { Command } from 'commander/esm.mjs';
+import genDiff from '../src/index.js';
 
-import { parseFile } from './src/parse.js';
-import { genDiff } from './src/diffGenerator.js';
-
+const program = new Command();
 program
-  .version('0.0.1')
+  .version('0.0.1', '-V, --version', 'output the version number')
   .description('Compares two configuration files and shows a difference.')
-  .option('-f, --format [type]', 'output format', 'stylish')
+  .option('-f, --format <type>', 'output format(choices: stylish, plain, json)', 'stylish')
+  .helpOption('-h, --help', 'output usage information')
   .arguments('<filepath1> <filepath2>')
-  .action((filepath1, filepath2) => {
-    const absolutePath1 = path.resolve(process.cwd(), filepath1);
-    const absolutePath2 = path.resolve(process.cwd(), filepath2);
-
-    const data1 = parseFile(absolutePath1);
-    const data2 = parseFile(absolutePath2);
-
-    if (data1 !== null && data2 !== null) {
-      const difference = genDiff(data1, data2);
-      console.log(`Comparing ${absolutePath1} and ${absolutePath2} in ${program.format} format`);
-      console.log(difference);
-    } else {
-      console.error('Error reading one or both files.');
-    }
-  });
-
+  .action((file1, file2) => console.log(genDiff(file1, file2, program.opts().format)));
 program.parse();

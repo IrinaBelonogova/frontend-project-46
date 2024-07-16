@@ -1,5 +1,5 @@
-const fs = require('fs');
-const { genDiff } = require('./src/diffGenerator.js');
+import fs from 'fs';
+import { genDiff } from './src/diffGenerator.js';
 
 test(() => {
   const filepath1 = fs.readFileSync('filepath1.json');

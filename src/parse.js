@@ -10,5 +10,17 @@ const parseFile = (filePath) => {
     return null;
   }
 };
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.question('Enter the file path: ', (filePath) => {
+  const data = parseFile(filePath);
+  if (data) {
+    console.log(data);
+  }
+  rl.close();
+});
 
 export { parseFile };
