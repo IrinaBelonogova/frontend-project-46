@@ -1,6 +1,7 @@
 import fs from 'fs';
 import _ from 'readline'
 import _ from 'lodash';
+import _ from '../index.js';
 
 function genDiff(filepath1, filepath2) {
   const obj1 = JSON.parse(fs.readFileSync(filepath1), 'utf-8');
@@ -10,7 +11,7 @@ function genDiff(filepath1, filepath2) {
 
   let diffText = '{\n';
   
-  for (let key of keys) {
+  for ( key of keys) {
     if (!Object.prototype.hasOwnProperty.call(obj1, key)) {
       diffText += ` + ${key}: ${obj2[key]}\n`;
     } else if (!Object.prototype.hasOwnProperty.call(obj2, key)) {

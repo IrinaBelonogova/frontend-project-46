@@ -1,3 +1,4 @@
+export default (absolutePath1, absolutePath2) => {
 
 const absolutePath1 = path.resolve(process.cwd(), filepath1);
 const absolutePath2 = path.resolve(process.cwd(), filepath2);
@@ -12,3 +13,4 @@ const absolutePath2 = path.resolve(process.cwd(), filepath2);
     } else {
       console.error('Error reading one or both files.');
     }
+  }
