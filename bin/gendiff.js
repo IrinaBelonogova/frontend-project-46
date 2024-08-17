@@ -9,6 +9,6 @@ program
   .description('Compares two configuration files and shows a difference.')
   .option('-f, --format <type>', 'output format(choices: stylish, plain, json)', 'stylish')
   .helpOption('-h, --help', 'output usage information')
-  .arguments('<filepath1> <filepath2>')
+  .arguments('<pathFile1> <pathFile2>')
   .action((pathFile1, pathFile2) => console.log(formatDiff(pathFile1, pathFile2, program.opts().format)));
 program.parser();
