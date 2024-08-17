@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander/esm.mjs';
-import genDiff from '../src/index.js';
+import formatDiff from '../src/index.js';
 
 const program = new Command();
 program
@@ -10,5 +10,5 @@ program
   .option('-f, --format <type>', 'output format(choices: stylish, plain, json)', 'stylish')
   .helpOption('-h, --help', 'output usage information')
   .arguments('<filepath1> <filepath2>')
-  .action((file1, file2) => console.log(genDiff(file1, file2, program.opts().format)));
-program.parse();
+  .action((pathFile1, pathFile2) => console.log(formatDiff(pathFile1, pathFile2, program.opts().format)));
+program.parser();

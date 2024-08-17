@@ -1,4 +1,4 @@
-import fs from 'fs';
+/*import fs from 'fs';
 import readline from 'readline'
 
 const parseFile = (filePath) => {
@@ -23,4 +23,14 @@ rl.question('Enter the file path: ', (filePath) => {
   rl.close();
 });
 
-export { parseFile };
+export { parseFile };*/
+
+import yaml from 'js-yaml';
+
+const parsers = {
+  json: JSON.parse,
+  yaml: yaml.load,
+  yml: yaml.load,
+};
+
+export default (data, typeFile) => parsers[typeFile](data);
