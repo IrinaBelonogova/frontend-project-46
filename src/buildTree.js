@@ -36,7 +36,7 @@ const buildTree = (data1, data2) => {
   const keys = _.sortBy(_.union(keys1, keys2)); // обьединение ключей в один массив
 
   return keys.map((key) => {
-    if (_.isPlainObject(data1[key]) && _.isPlainObject(data2[key])) {              // Если значения по этому ключу в обоих объектах являются объектами, то рекурсивно вызывается buildTree для этих вложенных объектов
+    if (_.isPlainObject(data1[key]) && _.isPlainObject(data2[key])) {  // Если значения по этому ключу в обоих объектах являются объектами, то рекурсивно вызывается buildTree для этих вложенных объектов
       return { key, type: 'nested', value: buildTree(data1[key], data2[key]) };  //  и результат помещается в объект с ключом value.
     }
     if (!Object.hasOwn(data2, key)) {  // Если ключ есть только в data1
