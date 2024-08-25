@@ -20,9 +20,10 @@ export default (absolutePath1, absolutePath2) => {
  
 import path from 'path';
 import { readFileSync } from 'fs';
-import parse from './parsers.js';
+import parse from './parser.js';
 import formatDiff from './formatters/index.js';
 import buildTree from './buildTree.js';
+
 
 const getTypeFile = (pathFile) => path.extname(pathFile).slice(1); //  определяет тип файла по его расширению
 const getData = (filepath) => parse(readFileSync(filepath, 'utf-8'), getTypeFile(filepath)); // читает содержимое файла и парсит его в зависимости от типа файла
