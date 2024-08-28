@@ -3,6 +3,7 @@ import yaml from 'js-yaml';
 import { buildTree } from './src/buildTree.js';
 import { compareJSON } from '../src/compareJSON.js';
 import formatPlain from '../src/plain.js';
+import formatJson from '../src/formatJson.js'
 
 test(() => {
   // Читаем файлы
