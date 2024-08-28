@@ -2,7 +2,7 @@ import fs from 'fs';
 import yaml from 'js-yaml';
 import { buildTree } from './src/buildTree.js';
 import { compareJSON } from '../src/compareJSON.js';
-import formatPlain from '../src/plain.js';
+import formatPlain from '../src/fopmatPlain.js';
 import formatJson from '../src/formatJson.js'
 
 test(() => {
